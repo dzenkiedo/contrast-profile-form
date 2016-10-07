@@ -185,19 +185,114 @@ module.exports = {
                   }]
                 }]
               }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Вид деятельности на данный момент'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
+                    name: 'date_of_birth',
+                    placeholder: 'Вид деятельности'
+                  }]
+                }, {
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Профессиональное прошлое (в каких сферах работали и т.д.)'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
+                    name: 'date_of_birth',
+                    placeholder: 'Вид деятельности'
+                  }, {
+                    block: 'button',
+                    mods: { type: 'link', view: 'action', size: 'l', theme: 'islands' },
+                    text: 'Добавить еще',
+                    icon: {
+                      block: 'icon',
+                      content: ' <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" viewBox="0 0 15 15" height="15" width="15"> <defs id="defs4" /> <metadata id="metadata7"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata> <g transform="translate(-75.847656,-275.63488)" id="layer1"> <g id="flowRoot4136" style="font-size:30px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:1px"> <path id="path4145" d="m 84.133928,277.13488 0,5.20561 5.213728,0 0,1.58879 -5.213728,0 0,5.2056 -1.572544,0 0,-5.2056 -5.213728,0 0,-1.58879 5.213728,0 0,-5.20561 1.572544,0 z" /> </g> </g> </svg> '
+                    }
+                  }]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Уровень навыков'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
+                    name: 'date_of_birth',
+                    placeholder: 'Музыкальный инструмент'
+                  }, {
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
+                    name: 'date_of_birth',
+                    placeholder: 'Уровень владения'
+                  }, {
+                    block: 'button',
+                    mods: { type: 'link', view: 'action', size: 'l', theme: 'islands' },
+                    text: 'Добавить еще',
+                    icon: {
+                      block: 'icon',
+                      content: ' <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" viewBox="0 0 15 15" height="15" width="15"> <defs id="defs4" /> <metadata id="metadata7"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata> <g transform="translate(-75.847656,-275.63488)" id="layer1"> <g id="flowRoot4136" style="font-size:30px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:1px"> <path id="path4145" d="m 84.133928,277.13488 0,5.20561 5.213728,0 0,1.58879 -5.213728,0 0,5.2056 -1.572544,0 0,-5.2056 -5.213728,0 0,-1.58879 5.213728,0 0,-5.20561 1.572544,0 z" /> </g> </g> </svg> '
+                    }
+                  }]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Сведения об опыте'
+                }, {
+                  block: 'profile-form',
+                  elem: 'section-desc',
+                  content: 'Опыт работы в музыкальных коллективах'
+                }, {
+                  block: 'radio-group',
+                  mods: { theme: 'islands', size: 'l', type: 'line' },
+                  name: 'radio-line',
+                  options: [
+                    { val: 'yes', text: 'Есть' },
+                    { val: 'no', text: 'Нету' }
+                  ]
+                }, {
+                  block: 'profile-form',
+                  elem: 'section-desc',
+                  content: 'Опыт участия в вокальных шоу городского, республиканского, международного уровня (если “да”, то в каких)'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'radio-group',
+                    mods: { theme: 'islands', size: 'l', type: 'line' },
+                    name: 'radio-line',
+                    options: [
+                      { val: 'yes', text: 'Есть' },
+                      { val: 'no', text: 'Нету' }
+                    ]
+                  }]
+                }]
+              }, {
                 block : 'checkbox-group',
                 mods : { theme : 'islands', size : 'l' },
                 name : 'checkbox-islands',
                 options : [
-                  { val : 1, text : '1.ФИО (полностью):' },
-                  { val : 2, text : '2.Дата рождения:' },
-                  { val : 3, text : '3.Владение музыкальным инструментом(ми) каким(ми) и на каком уровне' },
-                  { val : 4, text : '4.Вид деятельности на данный момент' },
-                  { val : 5, text : '5.Страна и город проживания' },
-                  { val : 6, text : '6.Профессиональное прошлое (в каких сферах работали и т.д.)' },
-                  { val : 7, text : '7.Образование(если присутствует: название УО, специальность)' },
-                  { val : 8, text : '8.Контактный номер телефона (с указанием кода)' },
-                  { val : 9, text : '9.Опыт работы в музыкальных коллективах (присутствует/не имеется)' },
                   { val : 10, text : '10.Опыт участия в вокальных шоу городского, республиканского, международного уровня (да/нет (если “да”, то в каких))' },
                   { val : 11, text : '11. Почему Вы выбрали именно этот инструмент(ы) (ответ в свободной форме)' },
                   { val : 12, text : '12.Сотрудничаете с каким-либо коллективом на данный момент? (да/нет)' },
@@ -206,7 +301,6 @@ module.exports = {
                   { val : 15, text : '15.Готовы ли при необходимости исполнять музыку, которая не соответствует Вашим предпочтениям (ответ в свободной форме)' },
                   { val : 16, text : '16.Опыт работы на большой сцене (присутствует/не имеется)' },
                   { val : 17, text : '17.Опыт работы по контракту (присутствует/не имеется)' },
-                  { val : 18, text : '18.Имеется ли музыкальное образование? (да/нет)' },
                   { val : 19, text : '19.Есть ли у Вас кумиры среди музыкантов(кто)' }
                 ]
               }]
