@@ -139,6 +139,34 @@ module.exports = {
                     name: 'date_of_birth',
                     placeholder: 'Название УО, Cпециальность '
                   }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'select',
+                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                    name: 'select',
+                    text: 'Музыкальное образование',
+                    options: [
+                    { val: 3, text: 'Да' },
+                    { val: 4, text: 'Нет' }
+                    ]
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'education',
+                    placeholder: 'Название УО, специальность'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', width: 'available', 'has-clear': true },
+                    name: 'education',
+                    placeholder: 'Владение музыкальным инструментом(ми) каким(ми) и на каком уровне'
+                  }]
                 }]
               }, {
                 block: 'profile-form',
@@ -148,6 +176,38 @@ module.exports = {
                   elem: 'section-head',
                   tag: 'h2',
                   content: 'Творчество'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'creativity',
+                    placeholder: 'Что является мотивацией для Вашего развития?  (ответ в свободной форме)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'creativity',
+                    placeholder: 'Вид деятельности на данный момент'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content:[{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'creativity',
+                    placeholder: 'В каком стиле (стилях) предпочитаете работать'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content:[{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'creativity',
+                    placeholder: 'Авторские композиции'
+                  }]
                 }]
               }, {
                 block: 'profile-form',
@@ -163,20 +223,75 @@ module.exports = {
                     block: 'input',
                     mods: { theme: 'islands', size: 'xl', 'has-clear': true },
                     name: 'date_of_birth',
-                    placeholder: 'Название УО'
-                  }, {
+                    placeholder: 'Профессиональное прошлое (в каких сферах работали и т.д.)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
                     block: 'input',
                     mods: { theme: 'islands', size: 'xl', 'has-clear': true },
                     name: 'date_of_birth',
-                    placeholder: 'Cпециальность'
-                  }, {
-                    block: 'button',
-                    mods: { type: 'link', view: 'action', size: 'xl', theme: 'islands' },
-                    text: 'Добавить еще',
-                    icon: {
-                      block: 'icon',
-                      content: ' <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" viewBox="0 0 15 15" height="15" width="15"> <defs id="defs4" /> <metadata id="metadata7"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata> <g transform="translate(-75.847656,-275.63488)" id="layer1"> <g id="flowRoot4136" style="font-size:30px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:1px"> <path id="path4145" d="m 84.133928,277.13488 0,5.20561 5.213728,0 0,1.58879 -5.213728,0 0,5.2056 -1.572544,0 0,-5.2056 -5.213728,0 0,-1.58879 5.213728,0 0,-5.20561 1.572544,0 z" /> </g> </g> </svg> '
-                    }
+                    placeholder: 'Опыт работы в музыкальных коллективах'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'select',
+                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                    name: 'select',
+                    text: 'Сотрудничаете с каким-либо коллективом на данный момент?',
+                    options: [
+                    { val: 3, text: 'Да' },
+                    { val: 4, text: 'Нет' }
+                    ]
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'education',
+                    placeholder: 'Укажите название коллектива(ов)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'select',
+                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                    name: 'select',
+                    text: 'Опыт работы на большой сцене',
+                    options: [
+                    { val: 3, text: 'Да' },
+                    { val: 4, text: 'Нет' }
+                    ]
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'education',
+                    placeholder: 'Опишите свой опыт работы на большой сцене'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'select',
+                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                    name: 'select',
+                    text: 'Опыт работы по контракту',
+                    options: [
+                    { val: 3, text: 'Да' },
+                    { val: 4, text: 'Нет' }
+                    ]
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'education',
+                    placeholder: 'Опишите свой опыт работы по контракту'
                   }]
                 }]
               }, {
@@ -189,32 +304,27 @@ module.exports = {
                   content: 'Медиа'
                 }, {
                   block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                    name: 'date_of_birth',
-                    placeholder: 'Вид деятельности'
-                  }]
+                  content:  {
+                    block : 'attach',
+                    mods : { theme : 'islands', size : 'xl' },
+                    button : 'Прикрепить 3-5 фото',
+                    noFileText : 'Файлы не выбраны'
+                  } 
                 }, {
-                  block: 'profile-form',
-                  elem: 'section-head',
-                  tag: 'h2',
-                  content: 'Профессиональное прошлое (в каких сферах работали и т.д.)'
+                  block: 'control-group',
+                  content:  {
+                    block : 'attach',
+                    mods : { theme : 'islands', size : 'xl' },
+                    button : 'Прикрепить записи авторской музыки (при наличии)',
+                    noFileText : 'Файлы не выбраны'
+                  } 
                 }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
                     mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                    name: 'date_of_birth',
-                    placeholder: 'Вид деятельности'
-                  }, {
-                    block: 'button',
-                    mods: { type: 'link', view: 'action', size: 'xl', theme: 'islands' },
-                    text: 'Добавить еще',
-                    icon: {
-                      block: 'icon',
-                      content: ' <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" viewBox="0 0 15 15" height="15" width="15"> <defs id="defs4" /> <metadata id="metadata7"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata> <g transform="translate(-75.847656,-275.63488)" id="layer1"> <g id="flowRoot4136" style="font-size:30px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:1px"> <path id="path4145" d="m 84.133928,277.13488 0,5.20561 5.213728,0 0,1.58879 -5.213728,0 0,5.2056 -1.572544,0 0,-5.2056 -5.213728,0 0,-1.58879 5.213728,0 0,-5.20561 1.572544,0 z" /> </g> </g> </svg> '
-                    }
+                    name: 'education',
+                    placeholder: 'Cсылки на видео в интернете с демонстрацией ваших выступлений (если есть)'
                   }]
                 }]
               }, {
@@ -230,21 +340,16 @@ module.exports = {
                   content: [{
                     block: 'input',
                     mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                    name: 'date_of_birth',
-                    placeholder: 'Музыкальный инструмент'
-                  }, {
+                    name: 'education',
+                    placeholder: 'Контактный номер телефона (свой или представителя коллектива)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
                     block: 'input',
                     mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                    name: 'date_of_birth',
-                    placeholder: 'Уровень владения'
-                  }, {
-                    block: 'button',
-                    mods: { type: 'link', view: 'action', size: 'xl', theme: 'islands' },
-                    text: 'Добавить еще',
-                    icon: {
-                      block: 'icon',
-                      content: ' <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" viewBox="0 0 15 15" height="15" width="15"> <defs id="defs4" /> <metadata id="metadata7"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF> </metadata> <g transform="translate(-75.847656,-275.63488)" id="layer1"> <g id="flowRoot4136" style="font-size:30px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:1px"> <path id="path4145" d="m 84.133928,277.13488 0,5.20561 5.213728,0 0,1.58879 -5.213728,0 0,5.2056 -1.572544,0 0,-5.2056 -5.213728,0 0,-1.58879 5.213728,0 0,-5.20561 1.572544,0 z" /> </g> </g> </svg> '
-                    }
+                    name: 'education',
+                    placeholder: 'Адрес электронной почты'
                   }]
                 }]
               }]
