@@ -1,7 +1,8 @@
 block('profile-form')(
   tag()('form'),
+  js()('true'),
   attrs()({
     'method': 'post',
-    'action': '',
+    'action': 'submit.php',
     'enctype': 'multipart/form-data'
   }));
