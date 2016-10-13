@@ -77,7 +77,6 @@ module.exports = {
                   content: [{
                     block: 'profile-form',
                     elem: 'section-head',
-                    tag: 'h2',
                     content: 'Основная информация'
                   }, {
                     block: 'control-group',
@@ -95,16 +94,74 @@ module.exports = {
                       name: 'date_of_birth',
                       placeholder: 'Дата рождения'
                     }, {
-                      block: 'button',
-                      mods: { theme: 'islands', size: 'xl', view: 'action' },
-                      name: 'date',
-                      icon: {
-                        block: 'icon',
-                        width: 100,
-                        content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
+                      block: 'dropdown',
+                      mods: { switcher: 'button', theme: 'islands', size: 's' },
+                      switcher: {
+                        block: 'button',
+                        mods: { theme: 'islands', size: 'xl', view: 'action' },
+                        name: 'date',
+                        icon: {
+                          block: 'icon',
+                          width: 100,
+                          content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
+                        }
+                      },
+                      popup: {
+                        block: 'popup',
+                        directions: ['right-center', 'top-center'],
+                        mods: { theme: 'islands' },
+                        content: {
+                          block: 'control-group',
+                          content: [{
+                            block: 'select',
+                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                            name: 'select',
+                            text: 'Число',
+                            options: (function() {
+                              var arr = [];
+                              for (var i = 1; i < 32; i++) {
+                                arr.push({ val: i, text: i });
+                              }
+
+                              return arr;
+                            }())
+                          }, {
+                            block: 'select',
+                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                            name: 'select',
+                            text: 'Месяц',
+                            options: [
+                            { val: 1, text: 'Январь' },
+                            { val: 2, text: 'Февраль' },
+                            { val: 3, text: 'Март' },
+                            { val: 4, text: 'Апрель' },
+                            { val: 5, text: 'Май' },
+                            { val: 6, text: 'Июнь' },
+                            { val: 7, text: 'Июль' },
+                            { val: 8, text: 'Август' },
+                            { val: 9, text: 'Сентябрь' },
+                            { val: 10, text: 'Октябрь' },
+                            { val: 11, text: 'Ноябрь' },
+                            { val: 12, text: 'Декабрь' }
+                            ]
+                          }, {
+                            block: 'select',
+                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                            name: 'select',
+                            text: 'Год',
+                            options: (function() {
+                              var arr = [];
+                              for (var i = 0; i < 40; i++) {
+                                arr.push({ val: 1976+i, text: 1976+i });
+                              }
+
+                              return arr;
+                            }())
+                          }]
+                        }
                       }
                     }]
-                  },{
+                  }, {
                     block: 'control-group',
                     content: [{
                       block: 'input',
@@ -140,17 +197,17 @@ module.exports = {
                       placeholder: 'Название УО, Cпециальность '
                     }]
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'select',
-                      text: 'Музыкальное образование',
-                      options: [
-                      { val: 3, text: 'Да' },
-                      { val: 4, text: 'Нет' }
-                      ]
-                    }]
+                    block: 'text-label',
+                    content: 'Музыкальное образование'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
                   }, {
                     block: 'control-group',
                     content: [{
@@ -201,17 +258,17 @@ module.exports = {
                       placeholder: 'В каком стиле (стилях) предпочитаете исполнять музыку'
                     }]
                   }, {
-                    block: 'control-group',
-                    content:[{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'select',
-                      text: 'Авторские композиции',
-                      options: [
-                      { val: 3, text: 'Да' },
-                      { val: 4, text: 'Нет' }
-                      ]
-                    }]
+                    block: 'text-label',
+                    content: 'Авторские композиции'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
                   }]
                 }, {
                   block: 'profile-form',
@@ -238,17 +295,17 @@ module.exports = {
                       placeholder: 'Опыт работы в музыкальных коллективах'
                     }]
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'select',
-                      text: 'Сотрудничаете с каким-либо коллективом на данный момент?',
-                      options: [
-                      { val: 3, text: 'Да' },
-                      { val: 4, text: 'Нет' }
-                      ]
-                    }]
+                    block: 'text-label',
+                    content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
                   }, {
                     block: 'control-group',
                     content: [{
@@ -258,45 +315,29 @@ module.exports = {
                       placeholder: 'Укажите название коллектива(ов)'
                     }]
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'select',
-                      text: 'Опыт работы на большой сцене',
-                      options: [
-                      { val: 3, text: 'Да' },
-                      { val: 4, text: 'Нет' }
-                      ]
-                    }]
+                    block: 'text-label',
+                    content: 'Опыт работы на большой сцене'
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'education',
-                      placeholder: 'Опишите свой опыт работы на большой сцене'
-                    }]
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'select',
-                      text: 'Опыт работы по контракту',
-                      options: [
-                      { val: 3, text: 'Да' },
-                      { val: 4, text: 'Нет' }
-                      ]
-                    }]
+                    block: 'text-label',
+                    content: 'Опыт работы по контракту'
                   }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'education',
-                      placeholder: 'Опишите свой опыт работы по контракту'
-                    }]
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
                   }]
                 }, {
                   block: 'profile-form',
@@ -446,18 +487,18 @@ module.exports = {
                     placeholder: 'Название УО, Cпециальность '
                   }]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Музыкальное образование',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
+                    block: 'text-label',
+                    content: 'Музыкальное образование'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
                     ]
-                  }]
-                }, {
+                  }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -488,7 +529,7 @@ module.exports = {
                     block: 'input',
                     mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
                     name: 'creativity',
-                    placeholder: 'Что является мотивацией для Вашего развития?  (ответ в свободной форме)'
+                    placeholder: 'Что является мотивацией для Вашего развития? (ответ в свободной форме)'
                   }]
                 }, {
                   block: 'control-group',
@@ -507,17 +548,17 @@ module.exports = {
                     placeholder: 'В каком стиле (стилях) предпочитаете исполнять музыку'
                   }]
                 }, {
-                  block: 'control-group',
-                  content:[{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Авторские композиции',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
-                    ]
-                  }]
+                  block: 'text-label',
+                  content: 'Авторские композиции'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'radio-button',
+                  val: 1,
+                  options : [
+                  { val : 1, text : 'Да' },
+                  { val : 2, text : 'Нет' }
+                  ]
                 }]
               }, {
                 block: 'profile-form',
@@ -544,18 +585,18 @@ module.exports = {
                     placeholder: 'Опыт работы в музыкальных коллективах'
                   }]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Сотрудничаете с каким-либо коллективом на данный момент?',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
+                    block: 'text-label',
+                    content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
                     ]
-                  }]
-                }, {
+                  }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -564,46 +605,30 @@ module.exports = {
                     placeholder: 'Укажите название коллектива(ов)'
                   }]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Опыт работы на большой сцене',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
+                    block: 'text-label',
+                    content: 'Опыт работы на большой сцене'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
+                    ]
+                  }, {
+                    block: 'text-label',
+                    content: 'Опыт работы по контракту'
+                  }, {
+                    block : 'radio-group',
+                    mods : { theme : 'islands', size : 'xl', type : 'button' },
+                    name : 'radio-button',
+                    val: 1,
+                    options : [
+                    { val : 1, text : 'Да' },
+                    { val : 2, text : 'Нет' }
                     ]
                   }]
-                }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                    name: 'education',
-                    placeholder: 'Опишите свой опыт работы на большой сцене'
-                  }]
-                }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Опыт работы по контракту',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
-                    ]
-                  }]
-                }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                    name: 'education',
-                    placeholder: 'Опишите свой опыт работы по контракту'
-                  }]
-                }]
               }, {
                 block: 'profile-form',
                 elem: 'section-group',
@@ -724,7 +749,7 @@ module.exports = {
                       content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
                     }
                   }]
-                },{
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -771,17 +796,16 @@ module.exports = {
                     placeholder: 'В каком стиле (стилях) предпочитаете исполнять музыку'
                   }]
                 }, {
-                  block: 'control-group',
-                  content:[{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Авторские композиции',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
-                    ]
-                  }]
+                  block: 'text-label',
+                  content: 'Авторские композиции'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'radio-button',
+                  options : [
+                  { val : 1, text : 'Да' },
+                  { val : 2, text : 'Нет' }
+                  ]
                 }]
               }, {
                 block: 'profile-form',
@@ -792,57 +816,41 @@ module.exports = {
                   tag: 'h2',
                   content: 'Профессиональная деятельность'
                 }, {
-                  block: 'control-group',
-                  content:[{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Специализация исполнения',
-                    options: [
-                    { val: 3, text: 'Авторская' },
-                    { val: 4, text: 'Cover' }
-                    ]
-                  }]
+                  block: 'text-label',
+                  content: 'Специализация исполнения'
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Опыт работы на большой сцене',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
-                    ]
-                  }]
+                  block : 'checkbox-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'checkbox-line',
+                  val: [1],
+                  options : [
+                  { val : 1, text : 'Авторская' },
+                  { val : 2, text : 'Cover' }
+                  ]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                    name: 'education',
-                    placeholder: 'Опишите свой опыт работы на большой сцене'
-                  }]
+                  block: 'text-label',
+                  content: 'Опыт работы на большой сцене'
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'select',
-                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                    name: 'select',
-                    text: 'Опыт работы по контракту',
-                    options: [
-                    { val: 3, text: 'Да' },
-                    { val: 4, text: 'Нет' }
-                    ]
-                  }]
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'radio-button',
+                  val: 1,
+                  options : [
+                  { val : 1, text : 'Да' },
+                  { val : 2, text : 'Нет' }
+                  ]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                    name: 'education',
-                    placeholder: 'Опишите свой опыт работы по контракту'
-                  }]
+                  block: 'text-label',
+                  content: 'Опыт работы по контракту'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'radio-button',
+                  val: 1,
+                  options : [
+                  { val : 1, text : 'Да' },
+                  { val : 2, text : 'Нет' }
+                  ]
                 }]
               }, {
                 block: 'profile-form',
