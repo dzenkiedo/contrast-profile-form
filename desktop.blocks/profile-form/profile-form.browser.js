@@ -4,9 +4,9 @@ modules.define('profile-form', ['i-bem__dom', 'jquery'], function(provide, BEMDO
     onSetMod: {
       'js': {
         'inited': function() {
-          this.domElem.on('submit', function() {
-            debugger;
-          });
+          // this.domElem.on('submit', function() {
+          //   debugger;
+          // });
         }
       }
     }

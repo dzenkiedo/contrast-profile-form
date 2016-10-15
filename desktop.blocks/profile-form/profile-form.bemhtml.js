@@ -1,6 +1,6 @@
 block('profile-form')(
   tag()('form'),
-  js()('true'),
+  js()(true),
   attrs()({
     'method': 'post',
     'action': 'submit.php',

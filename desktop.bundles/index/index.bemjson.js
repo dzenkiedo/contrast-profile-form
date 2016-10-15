@@ -3,9 +3,9 @@ module.exports = {
   title: 'Title of the page',
   favicon: '/favicon.ico',
   head: [
-    { elem: 'meta', attrs: { name: 'description', content: '' } },
-    { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
-    { elem: 'css', url: 'index.min.css' }
+  { elem: 'meta', attrs: { name: 'description', content: '' } },
+  { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
+  { elem: 'css', url: 'index.min.css' }
   ],
   scripts: [{ elem: 'js', url: 'index.min.js' }],
   mods: { theme: 'islands' },
@@ -32,7 +32,7 @@ module.exports = {
             tag: 'span',
             content:'Музыканту'
           }]
-        },{
+        }, {
           block: 'link',
           mix: [{ block: 'tabs', elem: 'link', js: true }, { block: 'tabs-item', js: { id: 'tab-2'} }],
           url: '#link-1',
@@ -45,7 +45,7 @@ module.exports = {
             tag: 'span',
             content: 'Вокалисту'
           }]
-        },{
+        }, {
           block: 'link',
           mix: [{ block: 'tabs', elem: 'link', js: true }, { block: 'tabs-item', js: { id: 'tab-3' } }],
           url: '#link-1',
@@ -72,362 +72,11 @@ module.exports = {
               block: 'profile-form',
               elem: 'wrapper',
               content: [{
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'profile-form',
-                    elem: 'section-head',
-                    content: 'Основная информация'
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'first_name',
-                      placeholder: 'Фамилия Имя Отчество'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'date_of_birth',
-                      placeholder: 'Дата рождения'
-                    }, {
-                      block: 'dropdown',
-                      mods: { switcher: 'button', theme: 'islands', size: 's' },
-                      switcher: {
-                        block: 'button',
-                        mods: { theme: 'islands', size: 'xl', view: 'action' },
-                        name: 'date',
-                        icon: {
-                          block: 'icon',
-                          width: 100,
-                          content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
-                        }
-                      },
-                      popup: {
-                        block: 'popup',
-                        directions: ['right-center', 'top-center'],
-                        mods: { theme: 'islands' },
-                        content: {
-                          block: 'control-group',
-                          mods: { dropdown: true },
-                          content: [{
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Число',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 1; i < 32; i++) {
-                                arr.push({ val: i, text: i });
-                              }
-
-                              return arr;
-                            }())
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Месяц',
-                            options: [
-                            { val: 1, text: 'Январь' },
-                            { val: 2, text: 'Февраль' },
-                            { val: 3, text: 'Март' },
-                            { val: 4, text: 'Апрель' },
-                            { val: 5, text: 'Май' },
-                            { val: 6, text: 'Июнь' },
-                            { val: 7, text: 'Июль' },
-                            { val: 8, text: 'Август' },
-                            { val: 9, text: 'Сентябрь' },
-                            { val: 10, text: 'Октябрь' },
-                            { val: 11, text: 'Ноябрь' },
-                            { val: 12, text: 'Декабрь' }
-                            ]
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Год',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 0; i < 40; i++) {
-                                arr.push({ val: 1976+i, text: 1976+i });
-                              }
-
-                              return arr;
-                            }())
-                          }]
-                        }
-                      }
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'country_name',
-                      placeholder: 'Страна проживания'
-                    }, {
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'city_name',
-                      placeholder: 'Город проживания'
-                    }]
-                  },{
-                    block: 'control-group',
-                    content: [{
-                      block: 'select',
-                      mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                      name: 'education_type',
-                      text: 'Образование',
-                      options: [
-                      { val: 1, text: 'Среднее' },
-                      { val: 2, text: 'Среднее специальное' },
-                      { val: 3, text: 'Высшее' },
-                      { val: 4, text: 'Другое' }
-                      ]
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'education_name',
-                      placeholder: 'Название УО, Cпециальность '
-                    }]
-                  }, {
-                    block: 'text-label',
-                    content: 'Музыкальное образование'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'has_music_education',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 2, text : 'Нет' }
-                    ]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'music_education_name',
-                      placeholder: 'Название УО, специальность'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', width: 'available', 'has-clear': true },
-                      name: 'music_proficiency',
-                      placeholder: 'Владение музыкальным инструментом(ми) каким(ми) и на каком уровне'
-                    }]
-                  }]
-                }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'profile-form',
-                    elem: 'section-head',
-                    tag: 'h2',
-                    content: 'Творчество'
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'creativity_motivation',
-                      placeholder: 'Что является мотивацией для Вашего развития? (ответ в свободной форме)'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'kind_of_activity',
-                      placeholder: 'Вид деятельности на данный момент'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content:[{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'music_implementation_style',
-                      placeholder: 'В каком стиле (стилях) предпочитаете исполнять музыку'
-                    }]
-                  }, {
-                    block: 'text-label',
-                    content: 'Авторские композиции'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'original_compositions',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 0, text : 'Нет' }
-                    ]
-                  }]
-                }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'profile-form',
-                    elem: 'section-head',
-                    tag: 'h2',
-                    content: 'Профессиональная деятельность'
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'professional_activity',
-                      placeholder: 'Профессиональное прошлое (в каких сферах работали и т.д.)'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'group_activity_experience',
-                      placeholder: 'Опыт работы в музыкальных коллективах'
-                    }]
-                  }, {
-                    block: 'text-label',
-                    content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'current_group_relationship',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 0, text : 'Нет' }
-                    ]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'current_group_relationship_names',
-                      placeholder: 'Укажите название коллектива(ов)'
-                    }]
-                  }, {
-                    block: 'text-label',
-                    content: 'Опыт работы на большой сцене'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'big_scene_experience',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 0, text : 'Нет' }
-                    ]
-                  }, {
-                    block: 'text-label',
-                    content: 'Опыт работы по контракту'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'contract_work_experience',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 0, text : 'Нет' }
-                    ]
-                  }]
-                }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'profile-form',
-                    elem: 'section-head',
-                    tag: 'h2',
-                    content: 'Медиа'
-                  }, {
-                    block: 'control-group',
-                    content:  {
-                      block : 'attach',
-                      mods : { theme : 'islands', size : 'xl' },
-                      name: 'photo_attaches',
-                      button : 'Прикрепить 3-5 фото',
-                      noFileText : 'Файлы не выбраны'
-                    } 
-                  }, {
-                    block: 'control-group',
-                    content:  {
-                      block : 'attach',
-                      mods : { theme : 'islands', size : 'xl' },
-                      name: 'music_attaches',
-                      button : 'Прикрепить записи авторской музыки (при наличии)',
-                      noFileText : 'Файлы не выбраны'
-                    } 
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'video_links',
-                      placeholder: 'Cсылки на видео в интернете с демонстрацией ваших выступлений (если есть)'
-                    }]
-                  }]
-                }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'profile-form',
-                    elem: 'section-head',
-                    tag: 'h2',
-                    content: 'Контакты'
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
-                      name: 'agent_phone',
-                      placeholder: 'Контактный номер телефона (свой или представителя коллектива)'
-                    }]
-                  }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'email',
-                      placeholder: 'Адрес электронной почты'
-                    }]
-                  }]
-                }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'button',
-                    mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
-                    name: 'submit',
-                    text: 'Отправить'
-                  }]
-                }]
-            }
-          }
-        }, {
-          elem: 'item',
-          elemMods: { closed: true },
-          mix: { block: 'tabs-item', js: { id: 'tab-2'} },
-          content: {
-            block: 'profile-form',
-            content: {
-              block: 'profile-form',
-              elem: 'wrapper',
-              content: [{
                 block: 'profile-form',
                 elem: 'section-group',
                 content: [{
                   block: 'profile-form',
                   elem: 'section-head',
-                  tag: 'h2',
                   content: 'Основная информация'
                 }, {
                   block: 'control-group',
@@ -438,82 +87,10 @@ module.exports = {
                     placeholder: 'Фамилия Имя Отчество'
                   }]
                 }, {
-                    block: 'control-group',
-                    content: [{
-                      block: 'input',
-                      mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                      name: 'date_of_birth',
-                      placeholder: 'Дата рождения'
-                    }, {
-                      block: 'dropdown',
-                      mods: { switcher: 'button', theme: 'islands', size: 's' },
-                      switcher: {
-                        block: 'button',
-                        mods: { theme: 'islands', size: 'xl', view: 'action' },
-                        name: 'date',
-                        icon: {
-                          block: 'icon',
-                          width: 100,
-                          content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
-                        }
-                      },
-                      popup: {
-                        block: 'popup',
-                        directions: ['right-center', 'top-center'],
-                        mods: { theme: 'islands' },
-                        content: {
-                          block: 'control-group',
-                          mods: { dropdown: true },
-                          content: [{
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Число',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 1; i < 32; i++) {
-                                arr.push({ val: i, text: i });
-                              }
-
-                              return arr;
-                            }())
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Месяц',
-                            options: [
-                            { val: 1, text: 'Январь' },
-                            { val: 2, text: 'Февраль' },
-                            { val: 3, text: 'Март' },
-                            { val: 4, text: 'Апрель' },
-                            { val: 5, text: 'Май' },
-                            { val: 6, text: 'Июнь' },
-                            { val: 7, text: 'Июль' },
-                            { val: 8, text: 'Август' },
-                            { val: 9, text: 'Сентябрь' },
-                            { val: 10, text: 'Октябрь' },
-                            { val: 11, text: 'Ноябрь' },
-                            { val: 12, text: 'Декабрь' }
-                            ]
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Год',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 0; i < 40; i++) {
-                                arr.push({ val: 1976+i, text: 1976+i });
-                              }
-
-                              return arr;
-                            }())
-                          }]
-                        }
-                      }
-                    }]
-                  }, {
+                  block: 'datepicker',
+                  name: 'date_of_birth',
+                  text: 'Дата рождения'
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -526,7 +103,7 @@ module.exports = {
                     name: 'city_name',
                     placeholder: 'Город проживания'
                   }]
-                },{
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'select',
@@ -534,10 +111,10 @@ module.exports = {
                     name: 'education_type',
                     text: 'Образование',
                     options: [
-                    { val: 1, text: 'Среднее' },
-                    { val: 2, text: 'Среднее специальное' },
-                    { val: 3, text: 'Высшее' },
-                    { val: 4, text: 'Другое' }
+                    { val: 'Среднее', text: 'Среднее' },
+                    { val: 'Среднее специальное', text: 'Среднее специальное' },
+                    { val: 'Высшее', text: 'Высшее' },
+                    { val: 'Другое', text: 'Другое' }
                     ]
                   }]
                 }, {
@@ -549,18 +126,18 @@ module.exports = {
                     placeholder: 'Название УО, Cпециальность '
                   }]
                 }, {
-                    block: 'text-label',
-                    content: 'Музыкальное образование'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'has_music_education',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 2, text : 'Нет' }
-                    ]
-                  }, {
+                  block: 'text-label',
+                  content: 'Музыкальное образование'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'has_music_education',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -616,10 +193,10 @@ module.exports = {
                   block : 'radio-group',
                   mods : { theme : 'islands', size : 'xl', type : 'button' },
                   name : 'original_compositions',
-                  val: 1,
+                  val: 'Нет',
                   options : [
-                  { val : 1, text : 'Да' },
-                  { val : 2, text : 'Нет' }
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
                   ]
                 }]
               }, {
@@ -647,18 +224,18 @@ module.exports = {
                     placeholder: 'Опыт работы в музыкальных коллективах'
                   }]
                 }, {
-                    block: 'text-label',
-                    content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'current_group_relationship',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 2, text : 'Нет' }
-                    ]
-                  }, {
+                  block: 'text-label',
+                  content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'current_group_relationship',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -667,30 +244,30 @@ module.exports = {
                     placeholder: 'Укажите название коллектива(ов)'
                   }]
                 }, {
-                    block: 'text-label',
-                    content: 'Опыт работы на большой сцене'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'big_scene_experience',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 2, text : 'Нет' }
-                    ]
-                  }, {
-                    block: 'text-label',
-                    content: 'Опыт работы по контракту'
-                  }, {
-                    block : 'radio-group',
-                    mods : { theme : 'islands', size : 'xl', type : 'button' },
-                    name : 'contract_work_experience',
-                    val: 1,
-                    options : [
-                    { val : 1, text : 'Да' },
-                    { val : 2, text : 'Нет' }
-                    ]
-                  }]
+                  block: 'text-label',
+                  content: 'Опыт работы на большой сцене'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'big_scene_experience',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
+                  block: 'text-label',
+                  content: 'Опыт работы по контракту'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'contract_work_experience',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }]
               }, {
                 block: 'profile-form',
                 elem: 'section-group',
@@ -752,15 +329,296 @@ module.exports = {
                   }]
                 }]
               }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'button',
+                  mix: [{ block: 'submit', js: true }],
+                  mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
+                  name: 'submit',
+                  text: 'Отправить'
+                }]
+              }]
+            }
+          }
+        }, {
+          elem: 'item',
+          elemMods: { closed: true },
+          mix: { block: 'tabs-item', js: { id: 'tab-2'} },
+          content: {
+            block: 'profile-form',
+            content: {
+              block: 'profile-form',
+              elem: 'wrapper',
+              content: [{
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
                   block: 'profile-form',
-                  elem: 'section-group',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Основная информация'
+                }, {
+                  block: 'control-group',
                   content: [{
-                    block: 'button',
-                    mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
-                    name: 'submit',
-                    text: 'Отправить'
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'first_name',
+                    placeholder: 'Фамилия Имя Отчество'
+                  }]
+                }, {
+                  block: 'datepicker',
+                  name: 'date_of_birth',
+                  text: 'Дата рождения'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'country_name',
+                    placeholder: 'Страна проживания'
+                  }, {
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'city_name',
+                    placeholder: 'Город проживания'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'select',
+                    mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
+                    name: 'education_type',
+                    text: 'Образование',
+                    options: [
+                    { val: 'Среднее', text: 'Среднее' },
+                    { val: 'Среднее специальное', text: 'Среднее специальное' },
+                    { val: 'Высшее', text: 'Высшее' },
+                    { val: 'Другое', text: 'Другое' }
+                    ]
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'education_name',
+                    placeholder: 'Название УО, Cпециальность '
+                  }]
+                }, {
+                  block: 'text-label',
+                  content: 'Музыкальное образование'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'has_music_education',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'music_education_name',
+                    placeholder: 'Название УО, специальность'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', width: 'available', 'has-clear': true },
+                    name: 'music_proficiency',
+                    placeholder: 'Владение музыкальным инструментом(ми) каким(ми) и на каком уровне'
                   }]
                 }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Творчество'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'creativity_motivation',
+                    placeholder: 'Что является мотивацией для Вашего развития? (ответ в свободной форме)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'kind_of_activity',
+                    placeholder: 'Вид деятельности на данный момент'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content:[{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'music_implementation_style',
+                    placeholder: 'В каком стиле (стилях) предпочитаете исполнять музыку'
+                  }]
+                }, {
+                  block: 'text-label',
+                  content: 'Авторские композиции'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'original_compositions',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Профессиональная деятельность'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'professional_activity',
+                    placeholder: 'Профессиональное прошлое (в каких сферах работали и т.д.)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'group_activity_experience',
+                    placeholder: 'Опыт работы в музыкальных коллективах'
+                  }]
+                }, {
+                  block: 'text-label',
+                  content: 'Сотрудничаете с каким-либо коллективом на данный момент?'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'current_group_relationship',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'current_group_relationship_names',
+                    placeholder: 'Укажите название коллектива(ов)'
+                  }]
+                }, {
+                  block: 'text-label',
+                  content: 'Опыт работы на большой сцене'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'big_scene_experience',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }, {
+                  block: 'text-label',
+                  content: 'Опыт работы по контракту'
+                }, {
+                  block : 'radio-group',
+                  mods : { theme : 'islands', size : 'xl', type : 'button' },
+                  name : 'contract_work_experience',
+                  val: 'Нет',
+                  options : [
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
+                  ]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Медиа'
+                }, {
+                  block: 'control-group',
+                  content:  {
+                    block : 'attach',
+                    mods : { theme : 'islands', size : 'xl' },
+                    name: 'photo_attaches',
+                    button : 'Прикрепить 3-5 фото',
+                    noFileText : 'Файлы не выбраны'
+                  } 
+                }, {
+                  block: 'control-group',
+                  content:  {
+                    block : 'attach',
+                    mods : { theme : 'islands', size : 'xl' },
+                    name: 'music_attaches',
+                    button : 'Прикрепить записи авторской музыки (при наличии)',
+                    noFileText : 'Файлы не выбраны'
+                  } 
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'video_links',
+                    placeholder: 'Cсылки на видео в интернете с демонстрацией ваших выступлений (если есть)'
+                  }]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'profile-form',
+                  elem: 'section-head',
+                  tag: 'h2',
+                  content: 'Контакты'
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
+                    name: 'agent_phone',
+                    placeholder: 'Контактный номер телефона (свой или представителя коллектива)'
+                  }]
+                }, {
+                  block: 'control-group',
+                  content: [{
+                    block: 'input',
+                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
+                    name: 'email',
+                    placeholder: 'Адрес электронной почты'
+                  }]
+                }]
+              }, {
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'button',
+                  mix: [{ block: 'submit', js: true }],
+                  mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
+                  name: 'submit',
+                  text: 'Отправить'
+                }]
+              }]
             }
           }
         }, {
@@ -780,7 +638,7 @@ module.exports = {
                   elem: 'section-head',
                   tag: 'h2',
                   content: 'Основная информация'
-                },{
+                }, {
                   block: 'control-group',
                   content: [{
                     block: 'input',
@@ -797,81 +655,9 @@ module.exports = {
                     placeholder: 'Фамилия Имя Отчество каждого участника'
                   }]
                 }, {
-                  block: 'control-group',
-                  content: [{
-                    block: 'input',
-                    mods: { theme: 'islands', size: 'xl', 'has-clear': true },
-                    name: 'date_of_birth',
-                    placeholder: 'Дата основания коллектива'
-                  }, {
-                      block: 'dropdown',
-                      mods: { switcher: 'button', theme: 'islands', size: 's' },
-                      switcher: {
-                        block: 'button',
-                        mods: { theme: 'islands', size: 'xl', view: 'action' },
-                        name: 'date',
-                        icon: {
-                          block: 'icon',
-                          width: 100,
-                          content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/> <path d="M0 0h24v24H0z" fill="none"/> </svg>'
-                        }
-                      },
-                      popup: {
-                        block: 'popup',
-                        directions: ['right-center', 'top-center'],
-                        mods: { theme: 'islands' },
-                        content: {
-                          block: 'control-group',
-                          mods: { dropdown: true },
-                          content: [{
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Число',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 1; i < 32; i++) {
-                                arr.push({ val: i, text: i });
-                              }
-
-                              return arr;
-                            }())
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Месяц',
-                            options: [
-                            { val: 1, text: 'Январь' },
-                            { val: 2, text: 'Февраль' },
-                            { val: 3, text: 'Март' },
-                            { val: 4, text: 'Апрель' },
-                            { val: 5, text: 'Май' },
-                            { val: 6, text: 'Июнь' },
-                            { val: 7, text: 'Июль' },
-                            { val: 8, text: 'Август' },
-                            { val: 9, text: 'Сентябрь' },
-                            { val: 10, text: 'Октябрь' },
-                            { val: 11, text: 'Ноябрь' },
-                            { val: 12, text: 'Декабрь' }
-                            ]
-                          }, {
-                            block: 'select',
-                            mods: { mode: 'radio-check', theme: 'islands', size: 'xl' },
-                            name: 'select',
-                            text: 'Год',
-                            options: (function() {
-                              var arr = [];
-                              for (var i = 0; i < 40; i++) {
-                                arr.push({ val: 1976+i, text: 1976+i });
-                              }
-
-                              return arr;
-                            }())
-                          }]
-                        }
-                      }
-                    }]
+                  block: 'datepicker',
+                  text: 'Дата основания коллектива',
+                  name: 'date_of_birth'
                 }, {
                   block: 'control-group',
                   content: [{
@@ -925,10 +711,10 @@ module.exports = {
                   block : 'radio-group',
                   mods : { theme : 'islands', size : 'xl', type : 'button' },
                   name : 'original_compositions',
-                  val: 1,
+                  val: 'Нет',
                   options : [
-                  { val : 1, text : 'Да' },
-                  { val : 2, text : 'Нет' }
+                  { val : 'Да', text : 'Да' },
+                  { val : 'Нет', text : 'Нет' }
                   ]
                 }]
               }, {
@@ -946,10 +732,10 @@ module.exports = {
                   block : 'checkbox-group',
                   mods : { theme : 'islands', size : 'xl', type : 'button' },
                   name : 'special_performance',
-                  val: [1],
+                  val: ['Авторская'],
                   options : [
-                  { val : 1, text : 'Авторская' },
-                  { val : 2, text : 'Cover' }
+                  { val : 'Авторская', text : 'Авторская' },
+                  { val : 'Cover', text : 'Cover' }
                   ]
                 }, {
                   block: 'text-label',
@@ -1037,15 +823,16 @@ module.exports = {
                   }]
                 }]
               }, {
-                  block: 'profile-form',
-                  elem: 'section-group',
-                  content: [{
-                    block: 'button',
-                    mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
-                    name: 'submit',
-                    text: 'Отправить'
-                  }]
+                block: 'profile-form',
+                elem: 'section-group',
+                content: [{
+                  block: 'button',
+                  mix: [{ block: 'submit', js: true }],
+                  mods: { type: 'submit', view: 'action', theme: 'islands', size: 'xl' },
+                  name: 'submit',
+                  text: 'Отправить'
                 }]
+              }]
             }
           }
         }]

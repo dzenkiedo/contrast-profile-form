@@ -25,7 +25,7 @@ modules.define('tabs-item', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, 
             tabs.setMod(openTabsItem, 'closed');
             tabs.delMod(this.domElem.eq(1), 'closed');
             tabs.setMod(this.domElem.eq(1), 'open');
-            console.log( this.findBlockOn($(this.domElem[1]), { block: 'tabs__item' }) );
+            // console.log( this.findBlockOn($(this.domElem[1]), { block: 'tabs__item' }) );
           },
           openContent: function(elem) {
             debugger;
