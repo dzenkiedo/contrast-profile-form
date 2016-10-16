@@ -7,13 +7,14 @@ block('datepicker')(
         content: [{
           block: 'input',
           mix: { block: this.ctx.block, elem: 'input' },
+          autocomplete: false,
           mods: { theme: 'islands', size: 'xl', 'has-clear': true },
           name: this.ctx.name,
           placeholder: this.ctx.text
         }, {
           block: 'dropdown',
           js: true,
-          mix: { block: this.ctx.block, elem: 'dropdown' },
+          mix: { block: 'datepicker', elem: 'switcher' },
           mods: { switcher: 'button', theme: 'islands', size: 'xl' },
           switcher: {
             block: 'button',
@@ -28,6 +29,7 @@ block('datepicker')(
             block: 'popup',
             directions: ['right-center', 'top-center'],
             mods: { theme: 'islands', size: 'xl' },
+            mix: { block: this.ctx.block, elem: 'dropdown' },
             content: {
               block: 'control-group',
               mods: { dropdown: true },
@@ -77,6 +79,15 @@ block('datepicker')(
                   }
                   return arr;
                 }())
+              }, {
+                block: 'button',
+                mix: { block: 'datepicker', elem: 'submit' },
+                mods: { theme: 'islands', view: 'action', size: 'xl' },
+                text: 'Готово',
+                icon: {
+                  block: 'icon',
+                  content: '<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none"/> <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/> </svg>'
+                }
               }]
             }
           }
