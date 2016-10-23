@@ -165,7 +165,7 @@ module.exports = {
                 }, {
                   block: 'control-group',
                   content: [{
-                    block: 'input',
+                    block: 'textarea',
                     mods: { theme: 'islands', width: 'available', size: 'xl', 'has-clear': true },
                     name: 'creativity_motivation',
                     placeholder: 'Что является мотивацией для Вашего развития? (ответ в свободной форме)'
