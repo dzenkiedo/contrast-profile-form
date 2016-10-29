@@ -22,7 +22,7 @@ modules.define('datepicker', ['i-bem__dom', 'jquery'], function(provide, BEMDOM,
           this.bindTo(this.elem('submit'), 'pointerclick', function() {
             var dates = select.map(function(item, index) {
               return item.getVal()
-            }).join('.');
+            }).join('/');
             input.setVal(dates);
             innerDropdown.onSwitcherClick(e);
           });

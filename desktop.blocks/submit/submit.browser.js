@@ -10,9 +10,11 @@ modules.define('submit', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) 
       }
     },
     _onClick: function(e) {
-      e.preventDefault();
-      var formData = new FormData(this.findBlockOutside('profile-form').domElem[0]).entries();
-      debugger;
+      // var formData = new FormData(this.findBlockOutside('profile-form').domElem[0]).entries();
+      // console.log(e);
+      // debugger;
+      // e.submit();
+      // // debugger;
     }
 
   }));

@@ -1,6 +1,4 @@
 ({
-
-
   mustDeps : { block : 'i-bem', elem : 'dom' },
   shouldDeps: [
     { block: 'popup', mods: { theme: 'islands' } },
